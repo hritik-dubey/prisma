@@ -39,3 +39,15 @@ type Address {
   state  String
   zip    String
 }
+
+type admin{
+  id      String   @id @default(auto()) @map("_id") @db.ObjectId
+  name String @unique
+  type Type
+  permission String @default(all)
+}
+
+enum Type{
+  admin
+  superAdmin
+}
